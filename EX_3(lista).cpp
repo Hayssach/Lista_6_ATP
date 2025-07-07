@@ -1,21 +1,22 @@
 #include <stdlib.h>
 #include <stdio.h>
 
-int conta_digitos(int n){
-	if(n < 0 ) n = -n;
+// função para contar os dígitos 
+int contar_digitos(int m){
+	if(m < 0 ) m = -m;
 	
-	if(n < 10){
+	if(m < 10){
 		return (1);
 	}
-	return 1 + conta_digitos(n / 10);
+	return 1 + contar_digitos(m / 10);
 }
 int main(){
-	int numero;
+	int num;
 	printf("Digite um numero inteiro:");
-	scanf("%d", &numero);
+	scanf("%d", &num);
 	
-	int qdt = conta_digitos(numero);
-	printf("O numero %d tem %d digitos.\n", numero, qdt);
+	int quantidade = contar_digitos(num);
+	printf("O numero %d tem %d digitos.\n", num, quantidade);
 	
 	getchar();
 	return(0);
