@@ -1,24 +1,24 @@
 #include<stdio.h>
 #include <stdlib.h>
 
-int soma_recursiva(int n) {
-    if (n <= 1) {
-        return n; // Caso base: se n é 1 ou 0, retorna n
+int somar_recursiva(int h) {
+    if (h <= 1) {
+        return h; // Caso base: se h Ã© 1 ou 0, retorna h
     }
-    return n + soma_recursiva(n - 1); // Chamada recursiva
+    return h + somar_recursiva(h - 1);
 }
 
 int main(){
-	int n;
-    printf("Digite um número inteiro positivo: ");
-    scanf("%d", &n);
+	int m;
+    printf("Digite um nÃºmero inteiro positivo: ");
+    scanf("%d", &m);
 
-    if (n < 0) {
-        printf("Número inválido! Informe um valor positivo.\n");
+    if (m < 0) {
+        printf("NÃºmero invÃ¡lido! Informe um valor positivo.\n");
     } else {
-        int resultado = soma_recursiva(n);
-        printf("A soma de 1 até %d é %d\n", n, resultado);
+        int r = somar_recursiva(m);
+        printf("A soma de 1 atÃ© %d Ã© %d\n", m, r);
     }
-
+    getchar();
     return 0;
 }
